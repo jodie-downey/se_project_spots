@@ -1,0 +1,12 @@
+.page {
+  background-color: #fcf5cf;
+  background-size: 100vh;
+  font-family: poppins, arial, sans-serif;
+  /* check line height */
+  line-height: normal;
+}
+
+.page__section {
+  max-width: 1280px;
+  margin: 0 auto;
+}

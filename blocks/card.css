@@ -1,0 +1,43 @@
+.card {
+  max-width: 413px;
+  margin: 0;
+}
+
+.card__image {
+  height: 413px;
+  width: 413px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: none;
+  border-radius: 2%;
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.card__title {
+  margin: 12px 0 0;
+  font-family: poppins, arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #212121;
+}
+
+.card__button {
+  background-image: url(../images/Like\ Icon.svg);
+  height: 20px;
+  width: 23px;
+  border: none;
+  background-color: transparent;
+  opacity: 40%;
+  margin: 0;
+  padding: 0;
+}

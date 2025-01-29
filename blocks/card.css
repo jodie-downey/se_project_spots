@@ -29,6 +29,10 @@
   font-weight: 500;
   line-height: 1.2;
   color: #212121;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 375px;
 }
 
 .card__button {
@@ -40,4 +44,25 @@
   opacity: 40%;
   margin: 0;
   padding: 0;
+}
+
+.card__button:hover {
+  background-image: url(../images/like-icon_hover.svg);
+  cursor: pointer;
+  opacity: 100%;
+}
+
+@media screen and (max-width: 657px) {
+  .card {
+    max-width: 318px;
+  }
+
+  .card__image {
+    height: 288px;
+    width: 288px;
+  }
+
+  .card__title {
+    max-width: 275px;
+  }
 }

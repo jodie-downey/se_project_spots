@@ -34,3 +34,7 @@ Grid display was used as the primary layout for the photos. Utilizing grid ensur
 ##### Future Improvements
 
 As my skills at Triple Ten expands, JavaScript will be implemented to make the website more interactive and smoother to use.
+
+##### GitHub page
+
+(https://jodie.downey.github.io/se_project_spots)

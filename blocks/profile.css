@@ -3,6 +3,7 @@
   padding: 34px 0 20px;
   border-bottom: 1px rgb(33, 33, 33, 0.4) solid;
   margin: 0 auto;
+  max-width: 1280px;
 }
 
 .profile__avatar {
@@ -25,7 +26,7 @@
   padding: 0;
   font-family: poppins, arial, sans-serif;
   font-weight: 500;
-  size: 32px;
+  font-size: 32px;
   line-height: 1;
   color: #212121;
   text-overflow: ellipsis;
@@ -41,7 +42,7 @@
   padding: 0;
   margin: 0;
   font-family: poppins, arial, sans-serif;
-  size: 16px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
   color: #212121;

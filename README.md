@@ -37,4 +37,4 @@ As my skills at Triple Ten expands, JavaScript will be implemented to make the w
 
 ##### GitHub page
 
-(https://jodie.downey.github.io/se_project_spots)
+(https://jodie-downey.github.io/se_project_spots/)

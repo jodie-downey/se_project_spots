@@ -10,6 +10,7 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
+  border-radius: 8px;
 }
 
 .profile__bio {
@@ -81,7 +82,7 @@
   margin-top: auto;
   background-color: #212121;
   color: #fcf5e5;
-  border-radius: 10%;
+  border-radius: 8px;
   height: 52px;
   width: 157px;
   font-family: poppins, arial, sans-serif;
@@ -126,8 +127,7 @@
   }
 
   .profile__post-button {
-    margin: 20px 0;
+    margin: 20px 0 0;
     width: 100%;
-    border-radius: 4%;
   }
 }

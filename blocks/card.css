@@ -34,7 +34,7 @@
 }
 
 .card__button {
-  background-image: url(../images/like_icon.png);
+  background-image: url(../images/like_button.svg);
   height: 20px;
   width: 23px;
   border: none;
@@ -42,6 +42,9 @@
   opacity: 40%;
   margin: 0;
   padding: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card__button:hover {

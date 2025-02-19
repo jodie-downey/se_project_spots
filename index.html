@@ -41,68 +41,15 @@
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/val_thorens.jpg"
-                alt="Val Thorens"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button class="card__button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/outdoor_terrace.jpg"
-                alt="Restaurant Terrace"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Restaurant Terrace</h2>
-                <button class="card__button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/outdoor_cafe.jpg"
-                alt="Outdoor Cafe"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Outdoor Cafe</h2>
-                <button class="card__button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/long_bridge.jpg"
-                alt="Very long bridge"
-              />
-              <div class="card__content">
-                <h2 class="card__title">A very long bridge over the forest</h2>
-                <button class="card__button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img class="card__image" src="images/tunnel.jpg" alt="Tunnel" />
-              <div class="card__content">
-                <h2 class="card__title">Tunnel with morning light</h2>
-                <button class="card__button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/mountain_house.jpg"
-                alt="Mountian House"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Mountain house</h2>
-                <button class="card__button" type="button"></button>
-              </div>
-            </li>
+            <template id="card-template">
+              <li class="card">
+                <img class="card__image" src="" alt="" />
+                <div class="card__content">
+                  <h2 class="card__title"></h2>
+                  <button class="card__button" type="button"></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -114,19 +61,19 @@
           <button type="submit" class="modal__close-button"></button>
           <h2 class="modal__title">Edit Profile</h2>
           <form class="modal__form" name="edit-profile">
-            <label class="modal__label" for="name">
+            <label class="modal__label" for="modal-name-input">
               Name
               <input
-                id="name"
+                id="modal-name-input"
                 class="modal__input"
                 type="text"
                 placeholder="Type your name"
               />
             </label>
-            <label class="modal__label" for="description">
+            <label class="modal__label" for="modal-description-input">
               Description
               <input
-                id="description"
+                id="modal-description-input"
                 class="modal__input"
                 type="text"
                 placeholder="Describe yourself"

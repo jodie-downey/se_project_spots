@@ -74,6 +74,7 @@
 
 .profile__edit-button:hover {
   opacity: 100%;
+  cursor: pointer;
 }
 
 .profile__post-button {
@@ -93,6 +94,7 @@
 
 .profile__post-button:hover {
   opacity: 80%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 657px) {

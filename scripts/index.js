@@ -149,7 +149,7 @@ function handledNewCardModalSubmit(evt) {
 
 addCardForm.addEventListener("submit", handledNewCardModalSubmit);
 
-previewModal.addEventListener("click", () => {
+previewCloseButton.addEventListener("click", () => {
   closeModal(previewModal);
 });
 

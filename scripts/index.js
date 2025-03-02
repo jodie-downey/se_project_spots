@@ -53,6 +53,7 @@ const addCardLinkInput = addNewCardModal.querySelector("#add-card-link-input");
 const addCardCaptionInput = addNewCardModal.querySelector(
   "#add-card-name-input"
 );
+const addCardForm = addNewCardModal.querySelector(".modal__form");
 
 //card elements
 const cardTemplate = document.querySelector("#card-template");
@@ -86,7 +87,7 @@ function getCardElement(data) {
   });
 
   cardDeleteButton.addEventListener("click", () => {
-    cardDeleteButton.closest(".card").remove();
+    cardElement.remove();
   });
 
   cardImageEl.addEventListener("click", () => {
@@ -143,9 +144,10 @@ function handledNewCardModalSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(addNewCardModal);
+  evt.target.reset();
 }
 
-addNewCardModal.addEventListener("submit", handledNewCardModalSubmit);
+addCardForm.addEventListener("submit", handledNewCardModalSubmit);
 
 previewModal.addEventListener("click", () => {
   closeModal(previewModal);

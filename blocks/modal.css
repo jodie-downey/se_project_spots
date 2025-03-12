@@ -51,7 +51,7 @@
   color: #fff;
   padding: 4px 8px;
   margin: 8px 0 0;
-  font-family: Poppins;
+  font-family: Poppins, arial, sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -120,6 +120,16 @@
   cursor: pointer;
 }
 
+.modal__error {
+  display: block;
+  color: rgba(255, 0, 0, 0.7);
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: poppins, arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
 .modal__submit-button {
   width: 156px;
   padding: 18px 0;
@@ -156,7 +166,7 @@
 
   .modal__caption {
     padding: 4px 8px;
-    font-family: Poppins;
+    font-family: Poppins, arial, sans-serif;
     font-size: 16px;
     line-height: 19.2px;
     max-width: 50%;

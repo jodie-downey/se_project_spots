@@ -107,6 +107,11 @@ function openModal(modal) {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+  resetValidation(
+    editModalForm,
+    [editModalNameInput, editModalDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
 
@@ -145,6 +150,7 @@ function handledNewCardModalSubmit(evt) {
   cardsList.prepend(cardElement);
   closeModal(addNewCardModal);
   evt.target.reset();
+  disableSubmitButton(submitNewCardModal, settings);
 }
 
 addCardForm.addEventListener("submit", handledNewCardModalSubmit);

@@ -100,8 +100,18 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function escModal(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    if (modal) {
+      closeModal(modal);
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", escModal);
 }
 
 profileEditButton.addEventListener("click", () => {
@@ -121,6 +131,7 @@ profilePostButton.addEventListener("click", () => {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", escModal);
 }
 
 profileCloseButton.addEventListener("click", () => {

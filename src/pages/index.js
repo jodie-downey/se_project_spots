@@ -1,3 +1,19 @@
+import "./index.css";
+import {
+  settings,
+  showInputError,
+  hideInputError,
+  checkInputValidity,
+  hasInvalidInput,
+  toggleButtonState,
+  disableSubmitButton,
+  resetValidation,
+  setEventListeners,
+  enableValidation,
+} from "../scripts/validation.js";
+
+import spotsLogo from "../images/Logo.svg";
+
 const intitalCards = [
   {
     name: "Val Thorens",
@@ -64,6 +80,10 @@ const previewCaptionEl = previewModal.querySelector(".modal__caption");
 const previewCloseButton = previewModal.querySelector(
   ".modal__close-button_type_preview"
 );
+
+//image elements
+const logoElement = document.querySelector("#spots-logo");
+logoElement.src = spotsLogo;
 
 function getCardElement(data) {
   console.log(data);
@@ -171,3 +191,5 @@ intitalCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
 });
+
+enableValidation(settings);

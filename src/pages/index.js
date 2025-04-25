@@ -13,6 +13,9 @@ import {
 } from "../scripts/validation.js";
 
 import spotsLogo from "../images/Logo.svg";
+import avatarPhoto from "../images/avatar.jpg";
+import editProfilePen from "../images/profile_pen.svg";
+import profilePostPen from "../images/new__post_plus.svg";
 
 const intitalCards = [
   {
@@ -38,7 +41,8 @@ const intitalCards = [
   {
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-
+  },
+  {
     name: "Red bridge in fog",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
@@ -84,9 +88,14 @@ const previewCloseButton = previewModal.querySelector(
 //image elements
 const logoElement = document.querySelector("#spots-logo");
 logoElement.src = spotsLogo;
+const avatarPhotoElement = document.querySelector("#avatar-photo");
+avatarPhotoElement.src = avatarPhoto;
+const editProfilePenEl = document.querySelector("#edit-profile-button");
+editProfilePenEl.src = editProfilePen;
+const profilePostPenEl = document.querySelector("#profile-post-button");
+profilePostPenEl.src = profilePostPen;
 
 function getCardElement(data) {
-  console.log(data);
   const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);

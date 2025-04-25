@@ -16,21 +16,17 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            class="profile__avatar"
-            src="images/avatar.jpg"
-            alt="Avatar Photo"
-          />
+          <img class="profile__avatar" id="avatar-photo" alt="Avatar Photo" />
           <div class="profile__bio">
             <h1 class="profile__title">Bessie Coleman</h1>
             <p class="profile__subtitle">Civil Aviator</p>
             <button class="profile__edit-button" type="button">
-              <img src="images/profile_pen.svg" alt="edit profile" />
+              <img id="edit-profile-button" alt="edit profile" />
               Edit Profile
             </button>
           </div>
           <button class="profile__post-button" type="button">
-            <img src="images/new__post_plus.svg" alt="edit profile" />
+            <img id="profile-post-button" alt="edit profile" />
             New Post
           </button>
         </section>
@@ -38,7 +34,7 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
-                <button type="buttotn" class="card__delete-button"></button>
+                <button type="button" class="card__delete-button"></button>
                 <img class="card__image" id="card-image" src="" alt="" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>

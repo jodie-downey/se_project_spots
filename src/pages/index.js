@@ -12,6 +12,8 @@ import {
   enableValidation,
 } from "../scripts/validation.js";
 
+import Api from "../utils/Api.js";
+
 import spotsLogo from "../images/Logo.svg";
 import avatarPhoto from "../images/avatar.jpg";
 import editProfilePen from "../images/profile_pen.svg";
@@ -47,6 +49,24 @@ const intitalCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 ];
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "ddd35ca5-33ea-4875-a654-ffea3920c4de",
+    "Content-Type": "application/json",
+  },
+});
+
+api
+  .getInitialCards()
+  .then((cards) => {
+    cards.forEach((item) => {
+      const cardElement = getCardElement(item);
+      cardsList.prepend(cardElement);
+    });
+  })
+  .catch(console.error);
 
 //modal elements
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -195,10 +215,5 @@ function handledNewCardModalSubmit(evt) {
 }
 
 addCardForm.addEventListener("submit", handledNewCardModalSubmit);
-
-intitalCards.forEach((item) => {
-  const cardElement = getCardElement(item);
-  cardsList.prepend(cardElement);
-});
 
 enableValidation(settings);

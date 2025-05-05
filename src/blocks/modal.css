@@ -91,6 +91,11 @@
   font-size: 32px;
   font-weight: 500;
   line-height: 1;
+  font-family: poppins, arial, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  color: #212121;
 }
 
 .modal__label {
@@ -102,6 +107,8 @@
   color: #212121;
   opacity: 70%;
   font-weight: 500;
+  font-family: poppins, arial, sans-serif;
+  line-height: 1;
 }
 
 .modal__input {

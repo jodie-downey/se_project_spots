@@ -18,6 +18,7 @@ import spotsLogo from "../images/Logo.svg";
 import avatarPhoto from "../images/avatar.jpg";
 import editProfilePen from "../images/profile_pen.svg";
 import profilePostPen from "../images/new__post_plus.svg";
+import editAvatarPen from "../images/Edit-avatar-pen.svg";
 
 const intitalCards = [
   {
@@ -59,12 +60,15 @@ const api = new Api({
 });
 
 api
-  .getInitialCards()
-  .then((cards) => {
+  .getAppInfo()
+  .then(([cards, userInfo]) => {
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
       cardsList.prepend(cardElement);
     });
+    profileName.textContent = userInfo.name;
+    profileDescription.textContent = userInfo.about;
+    avatarPhotoElement.src = userInfo.avatar;
   })
   .catch(console.error);
 
@@ -92,6 +96,8 @@ const addCardCaptionInput = addNewCardModal.querySelector(
 );
 const addCardForm = document.forms["add-card-form"];
 const popups = document.querySelectorAll(".modal");
+const editAvatarModal = document.querySelector("#edit-avatar-modal");
+const editAvatarInput = editAvatarModal.querySelector("#edit-avatar-input");
 
 //card elements
 const cardTemplate = document.querySelector("#card-template");
@@ -114,6 +120,8 @@ const editProfilePenEl = document.querySelector("#edit-profile-button");
 editProfilePenEl.src = editProfilePen;
 const profilePostPenEl = document.querySelector("#profile-post-button");
 profilePostPenEl.src = profilePostPen;
+const editAvatarPenEl = document.querySelector("#edit__avatar-button");
+editAvatarPenEl.src = editAvatarPen;
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
@@ -194,11 +202,39 @@ function closeModal(modal) {
 
 function handledEditModalFormSubmit(evt) {
   evt.preventDefault();
-  profileName.textContent = editModalNameInput.value;
-  profileDescription.textContent = editModalDescriptionInput.value;
+  api
+    .editUserInfo({
+      name: editModalNameInput.value,
+      about: editModalDescriptionInput.value,
+    })
+    .then((data) => {
+      profileName.textContent = data.name;
+      profileDescription.textContent = data.about;
+    })
+    .catch(console.error);
+
   closeModal(editProfileModal);
 }
+
+function handleAvatarModalSubmit(evt) {
+  evt.preventDefault();
+  console.log(editAvatarInput.value);
+  api
+    .editAvatarPhoto(editAvatarInput.value)
+    .then((data) => {
+      avatarPhotoElement.src = data.avatar;
+    })
+    .catch(console.error);
+  closeModal(editAvatarModal);
+}
+
 editModalForm.addEventListener("submit", handledEditModalFormSubmit);
+
+editAvatarPenEl.addEventListener("click", () => {
+  openModal(editAvatarModal);
+});
+
+editAvatarModal.addEventListener("submit", handleAvatarModalSubmit);
 
 function handledNewCardModalSubmit(evt) {
   evt.preventDefault();

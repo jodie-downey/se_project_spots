@@ -143,8 +143,8 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  cardLikeButton.addEventListener("click", () => {
-    cardLikeButton.classList.toggle("card__button_liked");
+  cardLikeButton.addEventListener("click", (evt) => {
+    handleLike(evt, data._id);
   });
 
   cardDeleteButton.addEventListener("click", (evt) => {
@@ -166,6 +166,10 @@ function handleDeleteCard(cardElement, data) {
   selectedCardId = data._id;
   console.log("Setting selectedCardId in handleDeleteCard:", selectedCardId);
   openModal(deleteCardModal);
+}
+
+function handleLike(evt, id) {
+  evt.target.classList.toggle("card__button_liked");
 }
 
 function handleEscape(evt) {
@@ -247,7 +251,8 @@ function handleDeleteSubmit(evt) {
   api
     .deleteCard(selectedCardId)
     .then(() => {
-      cardElement.remove;
+      selectedCard.remove();
+      selectedCardId = null;
       closeModal(deleteCardModal);
     })
     .catch(console.error);
@@ -265,16 +270,20 @@ editAvatarModal.addEventListener("submit", handleAvatarModalSubmit);
 
 function handledNewCardModalSubmit(evt) {
   evt.preventDefault();
-  const inputValues = {
+  const cardData = {
     name: addCardCaptionInput.value,
     link: addCardLinkInput.value,
-    alt: addCardCaptionInput.textContent,
   };
-  const cardElement = getCardElement(inputValues);
-  cardsList.prepend(cardElement);
-  closeModal(addNewCardModal);
-  evt.target.reset();
-  disableSubmitButton(submitNewCardModal, settings);
+  api
+    .postCard(cardData)
+    .then((res) => {
+      const cardElement = getCardElement(res);
+      cardsList.prepend(cardElement);
+      closeModal(addNewCardModal);
+      evt.target.reset();
+      disableSubmitButton(submitNewCardModal, settings);
+    })
+    .catch(console.error);
 }
 
 addCardForm.addEventListener("submit", handledNewCardModalSubmit);

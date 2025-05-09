@@ -22,37 +22,6 @@ import editProfilePen from "../images/profile_pen.svg";
 import profilePostPen from "../images/new__post_plus.svg";
 import editAvatarPen from "../images/Edit-avatar-pen.svg";
 
-const intitalCards = [
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest and throguh the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Red bridge in fog",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-  },
-];
-
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -66,7 +35,7 @@ api
   .then(([cards, userInfo]) => {
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
-      cardsList.prepend(cardElement);
+      cardsList.append(cardElement);
     });
     profileName.textContent = userInfo.name;
     profileDescription.textContent = userInfo.about;
@@ -78,6 +47,9 @@ api
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__subtitle");
+const avatarEditContainer = document.querySelector(
+  ".profile__avatar-container"
+);
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editModalNameInput = editProfileModal.querySelector("#modal-name-input");
@@ -288,7 +260,7 @@ deleteCardModal.addEventListener("submit", handleDeleteSubmit);
 
 editModalForm.addEventListener("submit", handledEditModalFormSubmit);
 
-editAvatarPenEl.addEventListener("click", () => {
+avatarEditContainer.addEventListener("click", () => {
   openModal(editAvatarModal);
 });
 

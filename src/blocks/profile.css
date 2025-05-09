@@ -8,8 +8,14 @@
 
 .profile__avatar-container {
   position: relative;
-  height: 192px;
-  width: 192px;
+  height: 190px;
+  width: 190px;
+  margin-right: 20px;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .profile__avatar-button {
@@ -23,10 +29,6 @@
   border: none;
   padding-bottom: 12px;
   visibility: hidden;
-}
-
-.profile__avatar-container:hover .profile__avatar-button {
-  visibility: visible;
 }
 
 .profile__avatar {

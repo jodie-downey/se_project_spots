@@ -16,7 +16,12 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__avatar" id="avatar-photo" alt="Avatar Photo" />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-button">
+              <img id="edit__avatar-button" alt="profile-pen" />
+            </button>
+            <img class="profile__avatar" id="avatar-photo" alt="Avatar Photo" />
+          </div>
           <div class="profile__bio">
             <h1 class="profile__title">Bessie Coleman</h1>
             <p class="profile__subtitle">Civil Aviator</p>
@@ -141,6 +146,65 @@
           <img class="modal__image" src="" alt="" />
           <p class="modal__caption"></p>
         </div>
+      </div>
+    </div>
+    <div class="modal" id="edit-avatar-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close-button"></button>
+        <h2 class="modal__title">Edit profile avatar</h2>
+        <form
+          class="modal__form"
+          name="edit-avatar-form"
+          id="edit-avatar-form"
+          novalidate
+        >
+          <label class="modal__label" for="edit-avatar-input">
+            Profile picture
+            <input
+              id="edit-avatar-input"
+              class="modal__input"
+              name="link"
+              type="url"
+              placeholder="Paste a link to an image"
+              required
+            />
+            <span class="modal__error" id="edit-avatar-input-error"></span>
+          </label>
+          <button type="submit" class="modal__submit-button">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="delete-modal">
+      <div class="modal__container">
+        <button
+          type="button"
+          class="modal__close-button modal__close-button_type_preview"
+        ></button>
+        <h2 class="modal__title-delete">
+          Are you sure you want to delete this image?
+        </h2>
+        <form
+          class="modal__form"
+          name="delete-form"
+          id="delete-form"
+          novalidate
+        >
+          <div class="modal__delete-btn-container">
+            <button
+              type="submit"
+              class="modal__submit-button modal__delete-button"
+            >
+              Delete
+            </button>
+            <button
+              type="button"
+              class="modal__submit-button modal__cancel-button"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </body>
